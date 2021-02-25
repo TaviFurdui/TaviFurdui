@@ -1,0 +1,156 @@
+body{
+    margin:0;
+    padding:0;
+    background:rgb(31, 31, 31);;
+    font-family:'Courier New', Courier, monospace;
+}
+body::before{
+    content: '';
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    position: absolute;
+    background:linear-gradient(#fc6a56, rgb(126, 30, 7));
+    clip-path: circle(10% at 10% 40%);
+}
+body::after{
+    content: '';
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    position: absolute;
+    background:linear-gradient(#972314, rgb(255, 143, 114));
+    clip-path: circle(20% at right 70%);
+}
+.container{
+    z-index:1;
+    position: absolute;
+    left:80px;
+    width:calc(100% - 160px);
+    height:80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.furtuni, .css-battle, .github{
+    cursor: default;
+    padding: 10px;
+    position: relative;
+    width: 30%;
+    height: 90%;
+    background: rgba( 255, 255, 255, 0.50 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border-left: 2px solid rgba(255, 255, 255);
+    border-top: 2px solid rgba(255, 255, 255);
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container h2{
+    color:#D24A37;
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+}
+.container img{
+    position: relative;
+    border-radius: 50%;
+    width:100px;
+    height:100px;
+    image-rendering: optimizeQuality;
+}
+.furtuni{
+    -webkit-animation: fadein 1s; 
+    animation: fadein 1s;
+}
+.css-battle{
+    -webkit-animation: fadein 2s; 
+    animation: fadein 2s;
+}
+.github{
+    -webkit-animation: fadein 3s; 
+    animation: fadein 3s;
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.container a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background: white;
+    color:#D24A37;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius:100px;
+    text-align: center;
+    cursor: pointer;
+    font-size: large;
+}
+.container a:hover{
+    background:rgb(163, 158, 158);
+    color:tomato;
+}
+.container .description{
+    padding:20px;
+}
+.furtuni:hover, .css-battle:hover, .github:hover{
+    background: rgba( 255, 255, 255, 0.7 );
+}
+.furtuni:hover .description, .css-battle:hover .description, .github:hover .description{
+    font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+    .nav {
+        display: none;
+        font-size: 3vw;
+    }
+    .Menu, .Hi, .Portfolio{
+        margin-left:40px;
+    }
+    .nav li:first-child{
+        left: 0;
+    }
+    .nav.open li{
+        display:inline-block;
+        list-style: none;
+        padding: 10px;
+    }
+    .nav ul{
+        padding: 0 !important;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .furtuni, .css-battle, .github{
+        padding: 10px;
+        position: relative;
+        width: 80%;
+        height: 90%;
+        margin-bottom: 40px;
+    }
+    .container{
+        z-index:1;
+        position: absolute;
+        left:40px;
+        width:calc(100% - 80px);
+        height:80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+}
